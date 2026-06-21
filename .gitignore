@@ -1,0 +1,9 @@
+# Personal reading data — keep OFF GitHub
+*.csv
+
+# Python cruft
+__pycache__/
+*.pyc
+
+# Mac cruft
+.DS_Store

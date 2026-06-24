@@ -1,5 +1,5 @@
 import pandas as pd 
-df = pd.read_csv("/Users/cy/Desktop/reading-tracker/reading_data.csv") # load the whole StoryGraph export into a table called df
+df = pd.read_csv("/Users/cy/Desktop/reading-tracker/storygraphdata.csv")  # load the whole StoryGraph export into a table called df
 
 df_sorted = df.sort_values("Star Rating", na_position="last") # sorts the table by the Star Rating column in ascending order, with NaN values placed at the end of the sorted table, and store that sorted table in a variable called df_sorted
 df_clean = df_sorted.drop_duplicates(subset=["Title", "Authors"], keep="first") # removes duplicate rows from the df_sorted table based on the Title and Authors columns, keeping only the first occurrence of each duplicate set, and store that cleaned table in a variable called df_clean

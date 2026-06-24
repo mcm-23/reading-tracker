@@ -22,3 +22,11 @@ print(df_clean["Star Rating"].value_counts(dropna=False)) # shows the count of e
 unrated_clean = df_clean[(df_clean["Read Status"] == "read") & (df_clean["Star Rating"].isna())] # filters the df_clean table to only include rows where the Read Status is "read" and the Star Rating is NaN (not rated), and store that filtered table in a variable called unrated_clean
 print(f"Genuinely unrated finished books: {len(unrated_clean)}")
 unrated_clean.to_csv("/Users/cy/Desktop/reading-tracker/books_to_rate.csv", index=False) # saves the unrated_clean table to a new CSV file called "books_to_rate.csv" on my desktop, without including the index column in the output file
+
+tbr_count = df_clean[df_clean["Read Status"] == "to-read"].shape[0]
+print(f"You have {tbr_count} books on your to-read pile.")
+
+books_per_year = 60 
+years_to_finish = tbr_count / books_per_year
+print(f"At a rate of {books_per_year} books per year, it will take you {years_to_finish} years to finish your to-read pile.")
+print(round(years_to_finish, 1)) # rounds the years_to_finish variable to one decimal place and prints it
